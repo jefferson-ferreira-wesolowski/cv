@@ -320,13 +320,13 @@
         <div class="section-head"><h2>Formação acadêmica</h2><p>Uma trajetória de aprendizado contínuo, organizada da formação mais recente à mais antiga.</p></div>
         <div class="academic-timeline" aria-label="Linha do tempo da formação acadêmica">
           <div class="academic-track">
-            <article class="academic-item degree"><span class="academic-kind">Graduação</span><h3>Licenciatura em Letras</h3><div class="academic-institution">UNIVESP</div><div class="academic-period">jun de 2023 — jun de 2026</div><div class="academic-note">Comunicação, comunicação escrita e competências relacionadas.</div></article>
-            <article class="academic-item postgrad"><span class="academic-kind">Pós-graduação</span><h3>Liderança, Gestão e Inovação</h3><div class="academic-institution">UNINTER Centro Universitário Internacional</div><div class="academic-period">ago de 2023 — abr de 2024</div><div class="academic-note">Formação estratégica para liderança eficaz, gestão de equipes e inovação organizacional.</div></article>
-            <article class="academic-item postgrad"><span class="academic-kind">Pós-graduação</span><h3>MBA em Gestão de Projetos e Processos</h3><div class="academic-institution">Centro Universitário de Jaguariúna — UniFAJ</div><div class="academic-period">2014 — 2016</div><div class="academic-note">Gestão de projetos, riscos, recursos, equipes multidisciplinares e processos organizacionais.</div></article>
-            <article class="academic-item degree"><span class="academic-kind">Graduação</span><h3>Engenharia de Controle e Automação</h3><div class="academic-institution">Centro Universitário de Jaguariúna — UniFAJ</div><div class="academic-period">2009 — 2013</div><div class="academic-note">Projetos temáticos, laboratório, monitoria e projeto de conclusão de curso.</div></article>
-            <article class="academic-item technical"><span class="academic-kind">Formação contínua</span><h3>Green Belt Six Sigma</h3><div class="academic-institution">Bacellar Treinamentos</div><div class="academic-period">2014 — 2015</div></article>
-            <article class="academic-item technical"><span class="academic-kind">Curso técnico</span><h3>Técnico em Logística</h3><div class="academic-institution">CEPEP</div><div class="academic-period">2005 — 2006</div></article>
-            <article class="academic-item technical"><span class="academic-kind">Ensino médio</span><h3>Ensino Médio Completo</h3><div class="academic-institution">Escola Estadual Celso Henrique Tozzi</div><div class="academic-period">2003 — 2005</div></article>
+            <article class="academic-item degree"><span class="academic-kind">Graduação</span><h3>Licenciatura em Letras</h3><div class="academic-institution">UNIVESP</div><div class="academic-period">jun de 2023 — jun de 2026</div><div class="academic-note">Comunicação, comunicação escrita e competências relacionadas.</div><button class="see-more academic-see-more" type="button" data-education="letras">Veja mais</button></article>
+            <article class="academic-item postgrad"><span class="academic-kind">Pós-graduação</span><h3>Liderança, Gestão e Inovação</h3><div class="academic-institution">UNINTER Centro Universitário Internacional</div><div class="academic-period">ago de 2023 — abr de 2024</div><div class="academic-note">Formação estratégica para liderança eficaz, gestão de equipes e inovação organizacional.</div><button class="see-more academic-see-more" type="button" data-education="lideranca">Veja mais</button></article>
+            <article class="academic-item postgrad"><span class="academic-kind">Pós-graduação</span><h3>MBA em Gestão de Projetos e Processos</h3><div class="academic-institution">UniFAJ / G7 Instituto</div><div class="academic-period">2015 — 2016</div><div class="academic-note">Gestão de projetos, riscos, recursos, equipes multidisciplinares e processos organizacionais.</div><button class="see-more academic-see-more" type="button" data-education="mba">Veja mais</button></article>
+            <article class="academic-item degree"><span class="academic-kind">Graduação</span><h3>Engenharia de Controle e Automação</h3><div class="academic-institution">Centro Universitário de Jaguariúna — UniFAJ</div><div class="academic-period">2009 — 2013</div><div class="academic-note">Projetos temáticos, laboratório, monitoria e projeto de conclusão de curso.</div><button class="see-more academic-see-more" type="button" data-education="engenharia">Veja mais</button></article>
+            <article class="academic-item technical"><span class="academic-kind">Formação contínua</span><h3>Green Belt Six Sigma</h3><div class="academic-institution">Bacellar Treinamentos</div><div class="academic-period">2014 — 2015</div><button class="see-more academic-see-more" type="button" data-education="greenbelt">Veja mais</button></article>
+            <article class="academic-item technical"><span class="academic-kind">Curso técnico</span><h3>Técnico em Logística</h3><div class="academic-institution">CEPEP</div><div class="academic-period">2005 — 2006</div><button class="see-more academic-see-more" type="button" data-education="logistica">Veja mais</button></article>
+            <article class="academic-item technical"><span class="academic-kind">Ensino médio</span><h3>Ensino Médio Completo</h3><div class="academic-institution">Escola Estadual Celso Henrique Tozzi</div><div class="academic-period">2003 — 2005</div><button class="see-more academic-see-more" type="button" data-education="medio">Veja mais</button></article>
           </div>
         </div>
         <div class="academic-legend" aria-label="Legenda da linha do tempo"><span class="legend-item"><span class="legend-star">★</span> Graduação</span><span class="legend-item"><span class="legend-dot"></span> Pós-graduação</span><span class="legend-item"><span class="legend-small"></span> Curso técnico e formação contínua</span></div>
@@ -443,6 +443,167 @@
 
 
   <script>
+    const educationDetails = {
+      letras: { title:'Licenciatura em Letras', company:'Universidade Virtual do Estado de São Paulo (UNIVESP)', meta:'2026', location:'Formação acadêmica', body:`Em 2026, concluí minha Licenciatura em Letras pela Universidade Virtual do Estado de São Paulo (UNIVESP), ampliando minha formação acadêmica para além da área de tecnologia e gestão na qual construí minha trajetória profissional.
+
+A escolha pela licenciatura representou mais do que uma formação voltada à docência. Ao longo do curso, desenvolvi competências relacionadas à linguagem, comunicação, interpretação, análise crítica e construção de discursos, conhecimentos que considero diretamente aplicáveis ao ambiente corporativo.
+
+A experiência acadêmica em uma universidade pública, estruturada na modalidade de Educação a Distância (EaD), também exigiu elevado grau de autonomia, disciplina e organização. A utilização contínua do Ambiente Virtual de Aprendizagem e a realização dos Projetos Integradores (PIs) proporcionaram uma experiência acadêmica orientada à resolução de problemas e ao trabalho colaborativo.
+
+Nos Projetos Integradores, a aplicação prática dos conhecimentos exigia a identificação de situações concretas, análise de problemas relacionados à comunicação e à linguagem e desenvolvimento de propostas de solução em equipe. Essa dinâmica contribuiu para o desenvolvimento de competências como trabalho colaborativo, gestão do tempo, pensamento crítico, comunicação e capacidade de adaptação.
+
+Linguagem como competência estratégica
+
+A formação em Letras acrescentou uma nova dimensão ao meu perfil profissional.
+
+Em ambientes corporativos cada vez mais orientados por dados, tecnologia e Inteligência Artificial, a capacidade de interpretar informações, compreender contextos e transformá-los em comunicação clara, coerente e adequada a diferentes públicos tornou-se uma competência estratégica.
+
+Ao longo da graduação, aprofundei conhecimentos em Linguística, Semântica, Análise do Discurso, Literatura e estudos da linguagem, desenvolvendo uma visão mais estruturada sobre a maneira como as pessoas interpretam, produzem e atribuem significado às informações.
+
+Essa formação complementa minha experiência anterior em processos, tecnologia, planejamento e análise de dados, permitindo conectar informação, contexto e comunicação.
+
+Aplicação no ambiente corporativo
+
+Os conhecimentos adquiridos em Letras também ampliam minhas possibilidades de atuação profissional em áreas nas quais tecnologia e comunicação precisam caminhar juntas.
+
+Entre essas possibilidades estão projetos relacionados à Experiência do Cliente (CX), especialmente na construção de fluxos de comunicação e definição de linguagem para assistentes virtuais baseados em Inteligência Artificial.
+
+A formação também oferece fundamentos aplicáveis à Comunicação Interna, contribuindo para a clareza e consistência da comunicação organizacional; à produção de conteúdo estratégico e Copywriting; e à revisão e curadoria de documentos, relatórios e materiais relacionados à conformidade e governança corporativa.
+
+Uma formação complementar à minha trajetória
+
+A Licenciatura em Letras não representa uma ruptura com minha trajetória anterior, mas uma expansão do meu repertório profissional.
+
+Minha carreira foi construída inicialmente sobre uma base técnica e operacional, evoluindo para planejamento, Supply Chain, gestão de processos, liderança, análise de dados e tecnologia. A formação em Letras acrescenta a essa trajetória uma dimensão voltada à comunicação, linguagem e interpretação.
+
+Essa combinação entre processos, tecnologia, dados e linguagem amplia minha capacidade de atuar em ambientes nos quais não basta produzir ou analisar informações: é necessário também compreender seu contexto, estruturar seu significado e comunicá-las de maneira eficiente.` },
+      lideranca: { title:'MBA em Liderança, Gestão e Inovação', company:'UNINTER Centro Universitário Internacional', meta:'2023', location:'Pós-graduação', body:`Em 2023, concluí o MBA em Liderança, Gestão e Inovação pela UNINTER, ampliando minha formação para além das competências técnicas e consolidando conhecimentos voltados à gestão de pessoas, liderança, inovação, estratégia e transformação organizacional.
+
+A pós-graduação representou uma etapa importante na evolução do meu perfil profissional. Após anos de experiência em áreas como Logística, PCP, Supply Chain, Compras, planejamento e gestão de operações, o MBA permitiu complementar essa experiência prática com metodologias e conceitos direcionados à gestão e à tomada de decisões em ambientes corporativos complexos.
+
+Liderança e gestão de pessoas
+
+Um dos principais eixos da formação foi o desenvolvimento de competências relacionadas à liderança e gestão de equipes.
+
+Os conhecimentos em inteligência emocional, liderança de equipes de alto desempenho, comunicação, feedback e gestão de conflitos ampliaram minha capacidade de compreender os diferentes fatores que influenciam o desempenho das pessoas e das equipes.
+
+Esses conhecimentos passaram a complementar minha experiência prática de liderança, especialmente em contextos nos quais é necessário alinhar diferentes perfis profissionais, administrar conflitos, estabelecer prioridades e manter o foco nos objetivos organizacionais.
+
+Inovação e tomada de decisão
+
+A formação também aprofundou conceitos relacionados à inovação e à transformação dos modelos de trabalho, incluindo metodologias como Design Thinking e fundamentos de People Analytics.
+
+Esses conhecimentos reforçaram uma característica que já vinha sendo desenvolvida ao longo da minha carreira: a utilização de informações e dados como suporte para a tomada de decisão.
+
+A combinação entre análise de dados e compreensão dos fatores humanos ampliou minha capacidade de avaliar problemas de maneira mais abrangente, considerando não apenas indicadores e processos, mas também experiência, comportamento, colaboração e impacto das decisões sobre as pessoas.
+
+Aplicação no ambiente corporativo
+
+Um dos aspectos mais relevantes do MBA foi a possibilidade de conectar os conceitos acadêmicos à experiência profissional.
+
+A formação contribuiu para ampliar minha visão sobre gestão de processos, liderança, mudança organizacional e transformação digital, fortalecendo a capacidade de atuar em situações que exigem integração entre pessoas, tecnologia e objetivos de negócio.
+
+A modalidade 100% EaD também exigiu autonomia, disciplina e gestão do tempo, permitindo conciliar a formação acadêmica com uma rotina profissional dinâmica.
+
+Outro aspecto relevante foi a possibilidade de aplicar os conhecimentos adquiridos de forma progressiva, incorporando novas ferramentas e metodologias à minha atuação profissional ao longo da própria formação.
+
+Da especialização técnica à visão de gestão
+
+O MBA complementou minha trajetória ao adicionar uma perspectiva de gestão e liderança à experiência técnica construída ao longo de mais de uma década no ambiente corporativo.
+
+Minha formação passou a reunir três dimensões que considero fundamentais para minha atuação:
+
+Conhecimento técnico, construído pela Engenharia e pela experiência em operações e Supply Chain.
+
+Visão analítica, desenvolvida por meio de PCP, planejamento, dados, indicadores e tecnologia.
+
+Competências de liderança e gestão, fortalecidas pela experiência prática e aprofundadas academicamente pelo MBA.
+
+Essa combinação ampliou minha capacidade de atuar não apenas na execução e no controle dos processos, mas também na análise de cenários, liderança de equipes, condução de mudanças e desenvolvimento de soluções orientadas à eficiência e aos objetivos do negócio.` },
+      mba: { title:'MBA em Gestão de Projetos e Processos Organizacionais', company:'UniFAJ / G7 Instituto', meta:'2015 — 2016', location:'Pós-graduação', body:`Em 2016, concluí o MBA em Gerência de Projetos e Processos Organizacionais pela UniFAJ, em parceria com o G7 Instituto, ampliando minha formação para uma área diretamente relacionada à experiência que vinha construindo em planejamento, operações, Supply Chain e gestão de processos.
+
+A pós-graduação teve como principal objetivo aprofundar minha capacidade de estruturar projetos, gerenciar processos, analisar riscos e conduzir iniciativas de melhoria, complementando a experiência prática adquirida ao longo da minha trajetória profissional.
+
+Gestão de projetos
+
+A formação proporcionou contato com fundamentos e metodologias de gerenciamento de projetos, incluindo conceitos associados às boas práticas do PMI e do Guia PMBOK, aprofundando conhecimentos relacionados a escopo, cronograma, custos, riscos, recursos, stakeholders e entregas.
+
+Esse repertório contribuiu para uma visão mais estruturada sobre a condução de projetos, permitindo compreender as diferentes etapas de uma iniciativa e os fatores necessários para transformar objetivos organizacionais em planos de ação executáveis.
+
+Também tive contato com metodologias ágeis, incluindo conceitos relacionados ao Scrum, ampliando minha capacidade de trabalhar em diferentes modelos de gestão de projetos e de adaptar métodos às características de cada iniciativa.
+
+Gestão e melhoria de processos
+
+Outro eixo importante da formação foi o estudo de processos organizacionais e melhoria contínua, incluindo conceitos relacionados à abordagem Lean e à identificação de oportunidades de otimização.
+
+Essa perspectiva possui forte conexão com minha trajetória profissional, marcada pela atuação em ambientes nos quais eficiência operacional, redução de desperdícios, controle de recursos e melhoria dos fluxos de trabalho são elementos fundamentais para o desempenho do negócio.
+
+A formação contribuiu para estruturar metodologicamente conhecimentos que já faziam parte da minha experiência prática, permitindo analisar processos de maneira mais sistemática, identificar gargalos e avaliar oportunidades de melhoria.
+
+Aplicação prática
+
+A proximidade entre o conteúdo acadêmico e os desafios encontrados no ambiente corporativo foi um aspecto relevante da formação. As discussões e atividades permitiam relacionar conceitos de gestão de projetos e processos a situações reais das organizações.
+
+Essa abordagem fortaleceu minha capacidade de conectar metodologia e prática, avaliando problemas não apenas sob a perspectiva operacional, mas também considerando objetivos, recursos, riscos, prazos e impactos organizacionais.
+
+Integração entre projetos, processos e estratégia
+
+O MBA ampliou minha visão sobre a relação entre projetos, processos e estratégia organizacional.
+
+Projetos são instrumentos para promover mudanças; processos são responsáveis por sustentar a operação; e a gestão precisa conectar ambos aos objetivos do negócio.
+
+Essa compreensão complementou minha experiência em PCP e Supply Chain e fortaleceu minha capacidade de atuar em iniciativas que envolvem planejamento, eficiência operacional, transformação de processos, gestão de recursos e melhoria contínua.` },
+      engenharia: { title:'Engenharia de Controle e Automação', company:'Centro Universitário de Jaguariúna — UniFAJ', meta:'2009 — 2013', location:'Graduação', body:`Em 2013, concluí minha graduação em Engenharia de Controle e Automação pela Faculdade de Jaguariúna (UniFAJ), consolidando uma formação técnica que posteriormente se tornou uma das principais bases da minha trajetória no ambiente corporativo.
+
+A graduação proporcionou uma formação multidisciplinar, combinando conhecimentos de elétrica, mecânica, eletrônica, automação, robótica, instrumentação e programação. Essa diversidade contribuiu para o desenvolvimento de uma visão sistêmica e de um raciocínio estruturado para análise e resolução de problemas.
+
+O caráter prático da formação teve papel importante nesse desenvolvimento. A realização de atividades laboratoriais e projetos integradores exigia a aplicação dos conhecimentos técnicos na construção de soluções para problemas concretos, envolvendo planejamento, desenvolvimento e execução.
+
+Além do conhecimento técnico, esses projetos proporcionaram o desenvolvimento de competências fundamentais para o ambiente corporativo, como trabalho em equipe, liderança, gestão de prazos, controle de custos, organização e tomada de decisão.
+
+Engenharia aplicada aos negócios
+
+Minha formação em Engenharia de Controle e Automação também contribuiu para a construção de uma capacidade que se tornou recorrente ao longo da minha carreira: compreender sistemas complexos, identificar relações entre diferentes processos e buscar oportunidades de otimização.
+
+Essa visão foi particularmente relevante para minha evolução profissional. Embora a formação esteja diretamente relacionada à automação industrial e às tecnologias de controle, os fundamentos adquiridos se mostraram aplicáveis a diferentes áreas do negócio.
+
+Ao longo da carreira, utilizei esse raciocínio analítico em atividades relacionadas a PCP, Supply Chain, planejamento, gestão de processos, análise de dados, eficiência operacional e automação de atividades.
+
+A proximidade da UniFAJ com o ambiente industrial e tecnológico da Região Metropolitana de Campinas também favoreceu uma formação conectada às demandas do mercado, aproximando o conhecimento acadêmico da realidade das organizações e dos processos industriais.
+
+Visão sistêmica e transformação
+
+Um dos principais legados da Engenharia de Controle e Automação para minha trajetória profissional foi a capacidade de enxergar uma operação como um sistema integrado, no qual pessoas, processos, informações, recursos e tecnologia estão interconectados.
+
+Essa perspectiva foi fundamental para minha transição entre diferentes áreas e segmentos. Ao longo da carreira, passei por Logística, PCP, Supply Chain, Compras, planejamento de operações, gestão de dados e tecnologia, mantendo como elemento comum a busca por eficiência e melhoria dos processos.
+
+A formação em Engenharia também estabeleceu uma base para minha atuação com tecnologia e transformação digital, permitindo compreender não apenas a aplicação de ferramentas tecnológicas, mas principalmente os problemas de negócio que essas ferramentas podem solucionar.
+
+Mais do que uma formação voltada à automação de máquinas, a Engenharia de Controle e Automação desenvolveu em mim uma forma estruturada de analisar problemas, compreender processos, integrar diferentes variáveis e construir soluções.` },
+      greenbelt: { title:'Green Belt Six Sigma', company:'Bacellar Treinamentos', meta:'2014 — 2015', location:'Formação contínua', body:`Formação voltada à aplicação da metodologia Six Sigma e de ferramentas de melhoria contínua.
+
+O treinamento ampliou minha capacidade de analisar causas, estruturar planos de ação, acompanhar indicadores e buscar redução de variabilidade, desperdícios e falhas nos processos.` },
+      logistica: { title:'Técnico em Logística', company:'CEPEP — Centro Público de Educação Profissional', meta:'2005', location:'Jaguariúna · Curso técnico', body:`Minha formação profissional teve início ainda durante o ensino médio, quando, em 2005, iniciei o curso Técnico em Logística pelo CEPEP – Centro Público de Educação Profissional, em Jaguariúna. O primeiro semestre foi realizado paralelamente aos últimos meses da educação básica, antecipando minha preparação para o mercado de trabalho.
+
+Concluído ao longo de aproximadamente um ano e meio, o curso foi estruturado em três módulos e proporcionou uma formação abrangente nos principais processos da cadeia logística. Entre os conhecimentos desenvolvidos estavam recebimento, armazenagem, movimentação e controle de estoques, inventário, transporte, distribuição e gestão de compras, além de conceitos relacionados à organização e otimização dos fluxos operacionais.
+
+A formação também introduziu conceitos de eficiência operacional, redução de custos, planejamento e controle de processos, construindo uma base técnica que posteriormente seria aplicada diretamente na minha experiência profissional em operações, logística, PCP e Supply Chain.
+
+O momento da formação foi particularmente relevante para minha trajetória, pois coincidiu com uma fase de expansão industrial e empresarial de Jaguariúna e da região de Campinas. Pouco depois, em 2007, a estrutura do CEPEP daria lugar ao SENAI de Jaguariúna, encerrando um ciclo importante da educação profissional pública no município.
+
+Mais do que representar minha primeira qualificação técnica, o curso marcou o início de uma trajetória profissional construída a partir da compreensão dos fluxos de materiais, informações e recursos que sustentam uma operação. Foi a partir dessa base que comecei a desenvolver uma visão orientada para processos, planejamento e eficiência — fundamentos que permaneceriam presentes nas diferentes etapas da minha carreira.` },
+      medio: { title:'Ensino Médio', company:'E.E. Celso Henrique Tozzi', meta:'2005', location:'Jaguariúna · Ensino médio', body:`Concluí o Ensino Médio na Escola Estadual Celso Henrique Tozzi, em Jaguariúna, em 2005, etapa que marcou o início da construção da minha trajetória acadêmica e profissional. Desde esse período, desenvolvi uma postura de valorização do conhecimento e de aproveitamento das oportunidades de aprendizagem, buscando transformar a formação escolar em preparação para os desafios que viriam a seguir.
+
+Durante o último ano do Ensino Médio, participei de um concurso de redação sobre o Referendo sobre o Desarmamento no Brasil, no qual conquistei o primeiro lugar. A experiência contribuiu para o desenvolvimento da minha capacidade de pesquisa, argumentação e expressão escrita — competências que, anos mais tarde, seriam novamente aprofundadas com a formação em Letras.
+
+Outro momento relevante ocorreu por meio da aproximação entre a escola e o CEPEP – Centro Público de Educação Profissional. A realização de palestras sobre formação técnica e oportunidades profissionais despertou meu interesse pela área de Logística e apresentou uma possibilidade concreta de continuidade dos estudos já durante o Ensino Médio.
+
+A partir dessa oportunidade, fui aprovado no processo seletivo e conquistei uma bolsa de estudos para o curso Técnico em Logística. Assim, passei a conciliar as duas formações: enquanto concluía o Ensino Médio no Tozzi, iniciava minha formação técnica, criando desde cedo uma conexão entre conhecimento acadêmico e preparação profissional.
+
+Essa combinação entre formação humanística, capacidade de comunicação e base técnica em Logística tornou-se um dos primeiros elementos da trajetória multidisciplinar que posteriormente seria ampliada pela Engenharia, pelos MBAs, pela experiência em PCP e Supply Chain, pela gestão de processos e pela formação em comunicação e linguagem.
+
+O Ensino Médio, portanto, não foi apenas uma etapa de conclusão da educação básica, mas o ponto de partida de uma trajetória marcada pela busca contínua de conhecimento e pela aplicação prática do aprendizado no ambiente profissional.` }
+    };
     const experienceDetails = {
       people: { title:'Instrutor de Excel Avançado', company:'Escola People Cursos Profissionalizantes', meta:'jan de 2016 - dez de 2016 · 12 meses', location:'Jaguariúna', body:`Instrutor profissional na escola People em Jaguariúna nos cursos de formação inicial em Informática e Excel Avançado.` },
       senai: { title:'Instrutor Profissional II', company:'SENAI SP', meta:'jul de 2014 - jan de 2015 · 7 meses', location:'Jaguariúna', body:`Instrutor profissional na escola SENAI em Jaguariúna nos cursos de formação inicial e continuada em Auxiliar de Logística e Informática Básica.` },
@@ -686,8 +847,10 @@ A passagem pela Iskra do Brasil representou o início da minha construção prof
     };
     const experienceModal = document.getElementById('experienceModal');
     function openExperience(key){ const item=experienceDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function openEducation(key){ const item=educationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function closeExperience(){ experienceModal.classList.remove('open'); experienceModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-    document.querySelectorAll('.see-more').forEach(button => button.addEventListener('click', () => openExperience(button.dataset.experience)));
+    document.querySelectorAll('.see-more[data-experience]').forEach(button => button.addEventListener('click', () => openExperience(button.dataset.experience)));
+    document.querySelectorAll('.academic-see-more[data-education]').forEach(button => button.addEventListener('click', () => openEducation(button.dataset.education)));
     document.querySelector('.modal-close').addEventListener('click', closeExperience);
     experienceModal.addEventListener('click', event => { if(event.target === experienceModal) closeExperience(); });
     document.addEventListener('keydown', event => { if(event.key === 'Escape') closeExperience(); });
