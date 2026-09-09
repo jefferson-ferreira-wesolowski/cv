@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="CV interativo de Jefferson Ferreira Wesolowski - PCP, Supply Chain, Logística, Dados e Gestão de Projetos." />
   <title>Jefferson Ferreira Wesolowski | CV Interativo</title>
+  <link rel="icon" type="image/svg+xml" href="favicon_jefferson.svg" />
   <style>
     :root{
       --bg:#0b1020;
@@ -46,7 +47,8 @@
     .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}
     .brand{font-weight:800;letter-spacing:.02em}
     .brand span{color:var(--accent)}
-    .nav-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.92rem;color:var(--muted)}
+    .nav-links{display:flex;align-items:center;gap:16px;flex-wrap:nowrap;overflow-x:auto;max-width:100%;font-size:.84rem;color:var(--muted);scrollbar-width:thin;scrollbar-color:var(--accent) transparent}
+    .nav-links a{white-space:nowrap}
     .nav-links a:hover{color:var(--text)}
 
     .hero{padding:92px 0 58px}
@@ -54,7 +56,8 @@
     .glass{background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);backdrop-filter:blur(14px)}
     .hero-main{padding:44px}
     .kicker{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(98,214,180,.1);border:1px solid rgba(98,214,180,.25);color:#bff6e6;font-size:.86rem;font-weight:700}
-    h1{font-size:clamp(2.5rem,7vw,5.8rem);line-height:.94;letter-spacing:-.055em;margin:22px 0 18px;max-width:900px}
+    h1{font-size:clamp(2.35rem,5.7vw,5.25rem);line-height:.94;letter-spacing:-.06em;margin:22px 0 18px;max-width:900px}
+    .name-line{display:block}
     .gradient{background:linear-gradient(90deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
     .hero-copy{max-width:760px;color:var(--muted);font-size:1.07rem;text-align:justify}
     .hero-copy p{margin:0 0 14px;text-align:justify}
@@ -170,7 +173,7 @@
       .contact{grid-template-columns:1fr}
     }
     @media(max-width:620px){
-      .nav-links{display:none}
+      .nav-links{width:100%;gap:14px;font-size:.78rem}
       .cards{grid-template-columns:1fr}
       .job-top{flex-direction:column}
       .period{white-space:normal}
@@ -194,6 +197,9 @@
     .experience-modal .modal-body h3{margin:28px 0 10px;color:var(--text);font-size:1.12rem;line-height:1.25;letter-spacing:-.01em}
     .experience-modal .modal-body h3:first-child{margin-top:0}
     .experience-modal .modal-body strong{color:var(--text);font-weight:800}
+    .modal-certificate{margin:28px 0 4px;padding-top:20px;border-top:1px solid var(--line);text-align:center}
+    .modal-certificate img{display:block;width:100%;height:auto;max-height:70vh;object-fit:contain;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.22)}
+    .modal-certificate figcaption{margin-top:9px;color:var(--muted);font-size:.78rem;line-height:1.4;text-align:center}
     .academic-timeline{overflow-x:auto;padding:18px 4px 16px;scrollbar-color:var(--accent) rgba(255,255,255,.08)}
     .academic-track{position:relative;display:flex;gap:18px;min-width:max-content;padding:46px 18px 10px}
     .academic-track:before{content:"";position:absolute;left:18px;right:18px;top:28px;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent),#f2c94c);opacity:.75}
@@ -275,11 +281,14 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <div class="brand">JEFFERSON<span>.</span></div>
-      <div class="nav-links">
-        <a href="#sobre">Sobre</a>
+      <div class="nav-links" aria-label="Navegação principal">
+        <a href="#sobre-mim" data-presentation="trajectory" aria-haspopup="dialog">Sobre mim</a>
+        <a href="#sobre">Perfil</a>
+        <a href="#formacao-academica">Formação</a>
         <a href="#experiencia">Experiência</a>
         <a href="#skills">Skills</a>
-        <a href="#formacao-academica">Formação</a>
+        <a href="#formacao">Formação complementar</a>
+        <a href="#idiomas">Idiomas</a>
         <a href="#contato">Contato</a>
       </div>
     </div>
@@ -290,8 +299,8 @@
       <div class="wrap hero-grid">
         <div class="glass hero-main">
           <span class="kicker">● Disponível para novas conexões profissionais</span>
-          <h1>Jefferson Ferreira <span class="gradient">Wesolowski</span></h1>
-          <button class="see-more presentation-see-more" type="button" data-presentation="trajectory" aria-haspopup="dialog">Veja mais</button>
+          <h1><span class="name-line">Jefferson Ferreira</span><span class="gradient name-line">Wesolowski</span></h1>
+          <button id="sobre-mim" class="see-more presentation-see-more" type="button" data-presentation="trajectory" aria-haspopup="dialog">Veja mais</button>
           <div class="hero-copy">
             <p>Possuo mais de 15 anos de experiência na indústria, atuando no planejamento e controle da operação e me destacando nas áreas de supply chain, logística, estoques e compras. Durante minha trajetória, sempre busquei a melhoria contínua e a implantação de projetos a fim de aumentar a produtividade e a eficácia das rotinas.</p>
             <p>Minha formação acadêmica consiste em MBA em Gestão de Projetos e Processos Organizacionais e graduação em Engenharia de Controle e Automação, além de certificação Green Belt Six Sigma. Fui responsável pela resolução de problemas de empresas multinacionais como a Takeda Pharma, com ganho de produtividade por meio de projeto para diminuir a fila de liberação de análises laboratoriais no setor de qualidade, e a Fresenius Medical Care, com projeto para otimização de abertura de ordens e análises em qualidade. Também atuei na melhoria da dinâmica de aquisições da Seara Alimentos, com ganhos em preço e prazo e estabelecimento de parcerias locais; na implementação Lean na Martin Engineering; e na gestão e controle de processos de produtos digitais no call center da Virtual Connection, com apresentação de resultados em dashboards no Power BI.</p>
@@ -435,7 +444,7 @@
       </div>
     </section>
 
-    <section>
+    <section id="idiomas">
       <div class="wrap">
         <div class="section-head"><h2>Idiomas</h2><p>Competências linguísticas aplicadas à comunicação profissional e à integração de processos.</p></div>
         <div class="cards">
@@ -745,7 +754,7 @@ O MBA ampliou minha visão sobre a relação entre projetos, processos e estrat�
 Projetos são instrumentos para promover mudanças; processos são responsáveis por sustentar a operação; e a gestão precisa conectar ambos aos objetivos do negócio.
 
 Essa compreensão complementou minha experiência em PCP e Supply Chain e fortaleceu minha capacidade de atuar em iniciativas que envolvem planejamento, eficiência operacional, transformação de processos, gestão de recursos e melhoria contínua.` },
-      engenharia: { title:'Engenharia de Controle e Automação', company:'Centro Universitário de Jaguariúna — UniFAJ', meta:'2009 — 2013', location:'Graduação', body:`Em 2013, concluí minha graduação em Engenharia de Controle e Automação pela Faculdade de Jaguariúna (UniFAJ), consolidando uma formação técnica que posteriormente se tornou uma das principais bases da minha trajetória no ambiente corporativo.
+      engenharia: { title:'Engenharia de Controle e Automação', company:'Centro Universitário de Jaguariúna — UniFAJ', meta:'2009 — 2013', location:'Graduação', image:'diploma_engenharia_controle_automacao.webp', imageAlt:'Diploma de Bacharel em Engenharia de Controle e Automação de Jefferson Ferreira Wesolowski', body:`Em 2013, concluí minha graduação em Engenharia de Controle e Automação pela Faculdade de Jaguariúna (UniFAJ), consolidando uma formação técnica que posteriormente se tornou uma das principais bases da minha trajetória no ambiente corporativo.
 
 A graduação proporcionou uma formação multidisciplinar, combinando conhecimentos de elétrica, mecânica, eletrônica, automação, robótica, instrumentação e programação. Essa diversidade contribuiu para o desenvolvimento de uma visão sistêmica e de um raciocínio estruturado para análise e resolução de problemas.
 
@@ -1048,9 +1057,9 @@ A passagem pela Iskra do Brasil representou o início da minha construção prof
     }
     function openPresentation(key){ const item=presentationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=formatPresentationBody(item.body); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function openExperience(key){ const item=experienceDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-    function openEducation(key){ const item=educationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function openEducation(key){ const item=educationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; const bodyHtml=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); const certificateHtml=item.image ? `<figure class="modal-certificate"><img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.imageAlt || 'Certificado de formação')}"><figcaption>Diploma de Bacharel em Engenharia de Controle e Automação · Faculdade de Jaguariúna — 2014</figcaption></figure>` : ''; document.getElementById('modalBody').innerHTML=bodyHtml+certificateHtml; experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function closeExperience(){ experienceModal.classList.remove('open'); experienceModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
-    document.querySelectorAll('[data-presentation]').forEach(button => button.addEventListener('click', () => openPresentation(button.dataset.presentation)));
+    document.querySelectorAll('[data-presentation]').forEach(button => button.addEventListener('click', event => { event.preventDefault(); openPresentation(button.dataset.presentation); }));
     document.querySelectorAll('.see-more[data-experience]').forEach(button => button.addEventListener('click', () => openExperience(button.dataset.experience)));
     document.querySelectorAll('.academic-see-more[data-education]').forEach(button => button.addEventListener('click', () => openEducation(button.dataset.education)));
     document.querySelector('.modal-close').addEventListener('click', closeExperience);
