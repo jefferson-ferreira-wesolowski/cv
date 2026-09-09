@@ -75,13 +75,14 @@
     .metric{min-height:92px;padding:15px;border:1px solid rgba(255,255,255,.1);border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.025));position:relative;overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease}
     .metric:hover{transform:translateY(-3px);border-color:rgba(98,214,180,.45);background:linear-gradient(145deg,rgba(98,214,180,.12),rgba(255,255,255,.035))}
     .metric:before{content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:4px;background:linear-gradient(var(--accent),var(--accent2))}
-    .metric-top{display:flex;align-items:center;gap:11px}.metric-icon{display:grid;place-items:center;width:40px;height:40px;flex:0 0 40px;border-radius:13px;border:1px solid rgba(119,166,255,.72);background:rgba(119,166,255,.13);color:var(--accent2);font-size:1.28rem;font-weight:800;line-height:1;box-shadow:0 0 0 4px rgba(119,166,255,.055),0 8px 18px rgba(0,0,0,.18);text-shadow:0 0 12px rgba(119,166,255,.5);transition:transform .25s ease,background .25s ease,box-shadow .25s ease}.metric:hover .metric-icon{transform:scale(1.08) rotate(-4deg);background:rgba(119,166,255,.2);box-shadow:0 0 0 5px rgba(119,166,255,.08),0 10px 24px rgba(0,0,0,.24)}
+    .metric-top{display:flex;align-items:center;gap:12px}.metric-icon{display:flex;align-items:center;justify-content:center;padding:0;box-sizing:border-box;width:56px;height:56px;flex:0 0 56px;border-radius:16px;border:1px solid rgba(119,166,255,.88);background:linear-gradient(145deg,rgba(119,166,255,.22),rgba(98,214,180,.07));color:#a9c6ff;line-height:1;box-shadow:0 0 0 5px rgba(119,166,255,.07),0 10px 22px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.12);transition:transform .25s ease,background .25s ease,box-shadow .25s ease}.metric-icon svg{display:block;width:32px;height:32px;margin:0 auto;flex:0 0 32px;overflow:visible;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 5px rgba(169,198,255,.45))}.metric:hover .metric-icon{transform:scale(1.08) rotate(-3deg);background:linear-gradient(145deg,rgba(119,166,255,.3),rgba(98,214,180,.12));box-shadow:0 0 0 6px rgba(119,166,255,.1),0 12px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.16)}
     .metric strong{display:block;font-size:1.35rem;line-height:1;color:var(--text)}
     .metric span{display:block;margin-top:7px;color:var(--muted);font-size:.73rem;line-height:1.4}
+    .metric > .metric-top > .metric-icon{display:flex!important;align-items:center;justify-content:center;margin:0!important;color:#a9c6ff!important;font-size:inherit!important;line-height:1!important}
     .metric-wide{grid-column:1/-1;min-height:auto;padding:14px 15px}.metric-wide:before{top:13px;bottom:13px}
     .metric-kicker{margin:0 0 10px!important;color:var(--text)!important;font-size:.7rem!important;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
     .metric-chips{display:flex;flex-wrap:wrap;gap:6px}.metric-chip{padding:6px 9px;border-radius:999px;color:#dfe7f5;font-size:.68rem;background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1)}
-    .personal-grid{display:grid;grid-template-columns:1fr;gap:7px;color:var(--muted);font-size:.76rem}.personal-grid span{margin:0!important;color:var(--muted)!important;font-size:.76rem!important}.personal-grid b{display:inline-grid;place-items:center;width:18px;color:var(--accent);font-size:.9rem;margin-right:4px}
+    .personal-grid{display:grid;grid-template-columns:1fr;gap:7px;color:var(--muted);font-size:.76rem}.personal-grid span{margin:0!important;color:var(--muted)!important;font-size:.76rem!important}.personal-grid > span > span{display:inline!important}.personal-grid b{display:inline-grid;place-items:center;width:18px;color:var(--accent);font-size:.9rem;margin-right:4px}
     @media(max-width:500px){.metrics{grid-template-columns:1fr}.metric-wide{grid-column:auto}}
 
     section{padding:44px 0}
@@ -93,6 +94,16 @@
     .card{padding:24px;background:var(--card);border:1px solid var(--line);border-radius:20px}
     .card h3{margin:0 0 8px;font-size:1.05rem}
     .card p{margin:0;color:var(--muted)}
+    .language-card{display:flex;flex-direction:column}
+    .language-description{min-height:86px}
+    .language-chart{display:grid;gap:11px;margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.09)}
+    .language-row{display:grid;grid-template-columns:70px minmax(0,1fr);align-items:center;gap:12px}
+    .language-label{color:#dfe6f4;font-size:.78rem;font-weight:700;letter-spacing:.02em}
+    .language-track{display:block;height:4px;border-radius:999px;background:rgba(255,255,255,.18);overflow:hidden}
+    .language-fill{display:block;height:100%;width:var(--language-level);border-radius:inherit;background:#f2c94c;box-shadow:0 0 10px rgba(242,201,76,.75);transform-origin:left center;animation:languageBarIn .9s cubic-bezier(.22,1,.36,1) both}
+    .language-row:nth-child(2) .language-fill{animation-delay:.08s}.language-row:nth-child(3) .language-fill{animation-delay:.16s}.language-row:nth-child(4) .language-fill{animation-delay:.24s}
+    @keyframes languageBarIn{from{transform:scaleX(0);opacity:.35}to{transform:scaleX(1);opacity:1}}
+    @media(prefers-reduced-motion:reduce){.language-fill{animation:none!important}}
     .tag-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
     .tag{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);font-size:.82rem;color:#dfe6f4}
 
@@ -139,6 +150,14 @@
     .contact h2{margin:0 0 8px;font-size:2rem}
     .contact p{margin:0;color:var(--muted)}
 
+    .newsletter-section{padding:16px 0 8px}
+    .newsletter-card{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:17px 20px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.09);border-radius:16px}
+    .newsletter-kicker{margin:0 0 3px;color:var(--accent);font-size:.67rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+    .newsletter-card h2{margin:0 0 3px;color:var(--text);font-size:1rem;letter-spacing:-.01em}
+    .newsletter-card p{margin:0;color:var(--muted);font-size:.82rem;line-height:1.45;text-align:justify}
+    .newsletter-link{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;padding:8px 12px;border:1px solid rgba(98,214,180,.3);border-radius:10px;color:#bff6e6;background:rgba(98,214,180,.08);font-size:.78rem;font-weight:800;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+    .newsletter-link:hover{transform:translateY(-2px);background:rgba(98,214,180,.15);border-color:rgba(98,214,180,.55)}
+    @media(max-width:620px){.newsletter-card{align-items:flex-start;flex-direction:column;gap:12px}.newsletter-link{width:100%}}
     footer{padding:38px 0 56px;color:#7f8aa0;text-align:center;font-size:.9rem}
 
     .floating{position:fixed;right:18px;bottom:18px;z-index:15;border:1px solid var(--line);background:rgba(13,20,36,.86);backdrop-filter:blur(12px);border-radius:999px;padding:10px 13px;color:#dfe7f5;cursor:pointer;box-shadow:var(--shadow)}
@@ -171,6 +190,10 @@
     .modal-close{border:1px solid var(--line);background:rgba(255,255,255,.06);color:var(--text);border-radius:10px;padding:8px 12px;cursor:pointer}
     .see-more{margin-top:16px;padding:9px 13px;border-radius:11px;border:1px solid rgba(98,214,180,.35);background:rgba(98,214,180,.1);color:#bff6e6;cursor:pointer;font-weight:700}
     .see-more:hover{background:rgba(98,214,180,.18)}
+    .presentation-see-more{display:inline-flex;margin:0 0 22px;font-size:.9rem}
+    .experience-modal .modal-body h3{margin:28px 0 10px;color:var(--text);font-size:1.12rem;line-height:1.25;letter-spacing:-.01em}
+    .experience-modal .modal-body h3:first-child{margin-top:0}
+    .experience-modal .modal-body strong{color:var(--text);font-weight:800}
     .academic-timeline{overflow-x:auto;padding:18px 4px 16px;scrollbar-color:var(--accent) rgba(255,255,255,.08)}
     .academic-track{position:relative;display:flex;gap:18px;min-width:max-content;padding:46px 18px 10px}
     .academic-track:before{content:"";position:absolute;left:18px;right:18px;top:28px;height:2px;background:linear-gradient(90deg,var(--accent2),var(--accent),#f2c94c);opacity:.75}
@@ -268,6 +291,7 @@
         <div class="glass hero-main">
           <span class="kicker">● Disponível para novas conexões profissionais</span>
           <h1>Jefferson Ferreira <span class="gradient">Wesolowski</span></h1>
+          <button class="see-more presentation-see-more" type="button" data-presentation="trajectory" aria-haspopup="dialog">Veja mais</button>
           <div class="hero-copy">
             <p>Possuo mais de 15 anos de experiência na indústria, atuando no planejamento e controle da operação e me destacando nas áreas de supply chain, logística, estoques e compras. Durante minha trajetória, sempre busquei a melhoria contínua e a implantação de projetos a fim de aumentar a produtividade e a eficácia das rotinas.</p>
             <p>Minha formação acadêmica consiste em MBA em Gestão de Projetos e Processos Organizacionais e graduação em Engenharia de Controle e Automação, além de certificação Green Belt Six Sigma. Fui responsável pela resolução de problemas de empresas multinacionais como a Takeda Pharma, com ganho de produtividade por meio de projeto para diminuir a fila de liberação de análises laboratoriais no setor de qualidade, e a Fresenius Medical Care, com projeto para otimização de abertura de ordens e análises em qualidade. Também atuei na melhoria da dinâmica de aquisições da Seara Alimentos, com ganhos em preço e prazo e estabelecimento de parcerias locais; na implementação Lean na Martin Engineering; e na gestão e controle de processos de produtos digitais no call center da Virtual Connection, com apresentação de resultados em dashboards no Power BI.</p>
@@ -286,12 +310,12 @@
             <div class="photo-caption"><strong>Jefferson Ferreira Wesolowski</strong><span>Planejamento · PCP · Supply Chain · Dados</span></div>
           </div>
           <div class="metrics" aria-label="Resumo profissional">
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">◴</span><strong>15+</strong></div><span>anos de experiência</span></div>
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">◈</span><strong>6</strong></div><span>setores de atuação</span></div>
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">✧</span><strong>2</strong></div><span>graduações</span></div>
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">◉</span><strong>2</strong></div><span>pós-graduações</span></div>
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">⌘</span><strong>12</strong></div><span>hard skills</span></div>
-            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true">◌</span><strong>9</strong></div><span>soft skills</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="25" r="14"></circle><path d="M24 17v8l6 4"></path><path d="M17 7h14"></path></svg></span><strong>15+</strong></div><span>anos de experiência</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"></circle><path d="M9 24h30"></path><path d="M24 9c5 4.4 7.5 9.4 7.5 15S29 34.6 24 39c-5-4.4-7.5-9.4-7.5-15S19 13.4 24 9Z"></path><path d="M13 15c3.2 2.2 6.9 3.3 11 3.3S31.8 17.2 35 15"></path><path d="M13 33c3.2-2.2 6.9-3.3 11-3.3s7.8 1.1 11 3.3"></path></svg></span><strong>6</strong></div><span>setores de atuação</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m24 7 4.8 9.8 10.8 1.6-7.8 7.6 1.8 10.8L24 32l-9.6 4.8 1.8-10.8-7.8-7.6 10.8-1.6L24 7Z"></path><path d="M24 14v19"></path></svg></span><strong>2</strong></div><span>graduações</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="m7 20 17-9 17 9-17 9L7 20Z"></path><path d="M13 24v9c6.5 4.5 15.5 4.5 22 0v-9"></path><path d="M41 20v12"></path><circle cx="41" cy="35" r="2"></circle></svg></span><strong>2</strong></div><span>pós-graduações</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="7"></circle><path d="M24 8v6M24 34v6M8 24h6M34 24h6M12.7 12.7l4.2 4.2M31.1 31.1l4.2 4.2M35.3 12.7l-4.2 4.2M16.9 31.1l-4.2 4.2"></path><circle cx="24" cy="24" r="15" stroke-dasharray="2 4"></circle></svg></span><strong>12</strong></div><span>hard skills</span></div>
+            <div class="metric"><div class="metric-top"><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="18" cy="18" r="5"></circle><circle cx="31" cy="18" r="5"></circle><path d="M9 36c.8-6.2 4.1-10 9-10s8.2 3.8 9 10"></path><path d="M29 26c5.2.2 8.4 3.8 9 10"></path><path d="M25 23c1.2 1.6 2.8 2.5 5 2.8"></path></svg></span><strong>9</strong></div><span>soft skills</span></div>
             <div class="metric metric-wide metric-personal"><span class="metric-kicker">Informações pessoais</span><div class="personal-grid"><span><b>♢</b> Casado · <span id="ageValue">37</span> anos</span><span><b>⌖</b> Nascido em Umuarama — PR</span><span><b>⌂</b> Resido em Jaguariúna — SP</span></div></div>
             <div class="metric metric-wide"><span class="metric-kicker">Setores de atuação</span><div class="metric-chips"><span class="metric-chip">Farmacêutico</span><span class="metric-chip">Alimentício</span><span class="metric-chip">Automotivo</span><span class="metric-chip">Autoelétrico</span><span class="metric-chip">Metalúrgico</span><span class="metric-chip">Call center</span></div></div>
             <div class="metric metric-wide"><span class="metric-kicker">Especialidades</span><div class="metric-chips"><span class="metric-chip">PCP</span><span class="metric-chip">Supply Chain</span><span class="metric-chip">MRP</span><span class="metric-chip">S&amp;OP</span><span class="metric-chip">Power BI</span><span class="metric-chip">SAP</span><span class="metric-chip">Protheus</span></div></div>
@@ -413,11 +437,29 @@
 
     <section>
       <div class="wrap">
-        <div class="section-head"><h2>Idiomas</h2><p>Conforme informado no currículo atual.</p></div>
+        <div class="section-head"><h2>Idiomas</h2><p>Competências linguísticas aplicadas à comunicação profissional e à integração de processos.</p></div>
         <div class="cards">
-          <div class="card"><h3>Espanhol</h3><p>Vivência em países hispanofalantes e estudos contínuos.</p></div>
-          <div class="card"><h3>Inglês</h3><p>Nível iniciante, com compreensão e uso de expressões cotidianas simples.</p></div>
-          <div class="card"><h3>Comunicação</h3><p>Experiência profissional em apresentações, reuniões de planejamento e negociação com diferentes stakeholders.</p></div>
+          <div class="card language-card">
+            <h3>Espanhol</h3>
+            <p class="language-description">Comunicação autônoma para condução de reuniões, redação corporativa e alinhamento de processos operacionais com parceiros e fornecedores da América Latina. Vivência em países hispanofalantes e estudos contínuos.</p>
+            <div class="language-chart" role="img" aria-label="Gráfico de proficiência em espanhol: escrita, leitura, audição e fala.">
+              <div class="language-row"><span class="language-label">Escrita</span><span class="language-track"><span class="language-fill" style="--language-level:90%"></span></span></div>
+              <div class="language-row"><span class="language-label">Leitura</span><span class="language-track"><span class="language-fill" style="--language-level:100%"></span></span></div>
+              <div class="language-row"><span class="language-label">Audição</span><span class="language-track"><span class="language-fill" style="--language-level:80%"></span></span></div>
+              <div class="language-row"><span class="language-label">Fala</span><span class="language-track"><span class="language-fill" style="--language-level:75%"></span></span></div>
+            </div>
+          </div>
+          <div class="card language-card">
+            <h3>Inglês</h3>
+            <p class="language-description">Compreensão de termos técnicos da área profissional e expressões cotidianas simples. Desenvolvo o idioma por meio de estudos e capacitação contínuos para ampliar a fluência e a comunicação corporativa no trabalho.</p>
+            <div class="language-chart" role="img" aria-label="Gráfico de proficiência em inglês: escrita, leitura, audição e fala.">
+              <div class="language-row"><span class="language-label">Escrita</span><span class="language-track"><span class="language-fill" style="--language-level:50%"></span></span></div>
+              <div class="language-row"><span class="language-label">Leitura</span><span class="language-track"><span class="language-fill" style="--language-level:60%"></span></span></div>
+              <div class="language-row"><span class="language-label">Audição</span><span class="language-track"><span class="language-fill" style="--language-level:30%"></span></span></div>
+              <div class="language-row"><span class="language-label">Fala</span><span class="language-track"><span class="language-fill" style="--language-level:45%"></span></span></div>
+            </div>
+          </div>
+          <div class="card"><h3>Comunicação</h3><p>Experiência consolidada na condução de apresentações executivas, reuniões de planejamento estratégico e negociações complexas com diferentes stakeholders, incluindo diretores, fornecedores e equipes multidisciplinares. Possuo sólida habilidade para traduzir dados técnicos e métricas operacionais em relatórios claros e narrativas persuasivas, garantindo o alinhamento de objetivos entre diferentes áreas. Destaco-me pela facilidade em mediar conflitos no ambiente corporativo, construir relacionamentos de confiança mútua e articular soluções ágeis voltadas para a melhoria contínua de processos e eficiência dos negócios.</p></div>
         </div>
       </div>
     </section>
@@ -432,7 +474,20 @@
 
   <button class="floating" id="themeBtn" aria-label="Alternar contraste">◐ contraste</button>
 
-  <footer><div class="wrap">Jefferson Ferreira Wesolowski · CV Interativo · <span id="year"></span></div></footer>
+  <section class="newsletter-section" aria-labelledby="newsletter-title">
+    <div class="wrap">
+      <div class="newsletter-card">
+        <div>
+          <p class="newsletter-kicker">Conteúdo e carreira</p>
+          <h2 id="newsletter-title">Acompanhe minha newsletter no LinkedIn</h2>
+          <p>Insights sobre processos, gestão, dados, tecnologia e desenvolvimento profissional.</p>
+        </div>
+        <a class="newsletter-link" href="https://www.linkedin.com/newsletters/cultcorporation-7064760676333817856/" target="_blank" rel="noopener noreferrer">Assinar newsletter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="wrap">Jefferson Ferreira Wesolowski · <span id="year"></span></div></footer>
 
   <div class="modal-backdrop" id="experienceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <article class="experience-modal">
@@ -443,6 +498,143 @@
 
 
   <script>
+    const presentationDetails = {
+      trajectory: { title:'Minha trajetória', company:'Trajetória profissional e acadêmica', meta:'2005 — o momento', location:'Jaguariúna · Campinas e região', body:`Minha trajetória profissional começou antes do meu primeiro emprego.
+
+Em **2005**, ainda estudante do Ensino Médio na **Escola Estadual Celso Henrique Tozzi**, em Jaguariúna, eu já entendia que conhecimento seria uma das principais ferramentas para construir meu caminho. Naquele ano, conquistei o primeiro lugar em um concurso de redação sobre o Referendo do Desarmamento no Brasil. Foi uma experiência que fortaleceu minha relação com a escrita, a pesquisa e a capacidade de transformar ideias em argumentos.
+
+Também foi naquele ano que conheci a Logística. Por meio de palestras realizadas na escola por representantes do **CEPEP – Centro Público de Educação Profissional**, descobri uma área que dialogava diretamente com o crescimento industrial da região.
+
+Prestei o processo seletivo, conquistei uma bolsa de estudos e passei a conciliar as duas formações: enquanto concluía o Ensino Médio, iniciava o **Técnico em Logística**. Durante um ano e meio, estudei recebimento, armazenagem, estoques, inventário, transporte, distribuição e compras.
+
+Foi minha primeira aproximação com uma ideia que acompanharia toda a minha carreira: **uma operação eficiente depende da integração entre pessoas, processos, recursos e informação**.
+
+## O chão de fábrica
+
+Em **2007**, entrei na **Iskra do Brasil** como Auxiliar de Produção. Meu primeiro contato com o mundo corporativo aconteceu no chão de fábrica, trabalhando na produção de motores de partida e alternadores.
+
+Também tive contato com atividades de almoxarifado, recebimento e expedição. Essa experiência me permitiu aplicar na prática aquilo que havia aprendido no curso técnico e, naturalmente, avançar para a função de **Almoxarife**.
+
+Passei a trabalhar diretamente com recebimento, expedição, inventários e controle de estoques. Foi ali que comecei a entender que logística não era apenas movimentar materiais: era garantir que a informação e o recurso certo estivessem disponíveis no momento certo.
+
+## Da operação ao planejamento
+
+Na sequência, ingressei na **Nycomed**, posteriormente integrada ao grupo Takeda, depois de um processo seletivo com aproximadamente 40 candidatos, no qual fui um dos seis selecionados.
+
+Comecei como **Almoxarife I** e construí uma trajetória de crescimento dentro da empresa. Passei por Almoxarife II, Almoxarife III e Almoxarife Especializado, assumindo responsabilidades cada vez maiores sobre os processos do armazém.
+
+Desenvolvi controles para o recebimento, acompanhei estoques, expedição e movimentação de materiais e, posteriormente, assumi a posição de **Analista de Logística**, com foco em expedição e interface com as demais áreas.
+
+Em **2014**, veio uma mudança decisiva: fui convidado a integrar o **PCP – Planejamento e Controle da Produção**.
+
+A partir dali, minha atuação deixou de estar concentrada na execução e passou a envolver planejamento, análise e tomada de decisão. Como Analista de PCP Júnior, trabalhei com planejamento de materiais de embalagem, MRP, acompanhamento de pedidos de compra e negociação de prazos com fornecedores, além do controle da acuracidade dos estoques.
+
+Foi o momento em que comecei a enxergar a operação de uma perspectiva diferente: não apenas o que estava acontecendo, mas **o que precisaria acontecer para que a operação funcionasse**.
+
+## Supply Chain
+
+Depois de aproximadamente nove anos nessa trajetória, cheguei à **Fresenius Medical Care** como Analista de PCP Sênior.
+
+Ali, ampliei minha visão de Supply Chain. Passei a atuar no planejamento de compras e produção, programação de linhas, recebimento de insumos, Plano Mestre de Produção, MRP e acompanhamento de pedidos.
+
+Também trabalhei na priorização de materiais para o Controle de Qualidade, na movimentação de estoques externos e na expedição de produtos acabados para centros de distribuição. A participação em reuniões de **S&OP** aproximou ainda mais minha atuação das decisões estratégicas da operação.
+
+Foi uma experiência importante para compreender que planejamento não acontece isoladamente. Ele conecta compras, produção, qualidade, estoque, logística, vendas e estratégia.
+
+## Compras e negociação
+
+Em **2018**, fui para a **Seara Alimentos** como Comprador e Negociador Pleno.
+
+Foi uma mudança de perspectiva. Depois de anos planejando materiais e produção, passei a atuar diretamente na aquisição e negociação dos recursos necessários para a operação.
+
+Negociei preços e prazos com fornecedores, acompanhei entregas e participei de projetos de melhoria das unidades, adquirindo materiais técnicos e contratando serviços especializados de acordo com cronogramas, custos e requisitos de qualidade.
+
+Continuei também trabalhando com MRP e planejamento de itens produtivos, garantindo disponibilidade de materiais de acordo com o plano de produção e as políticas de estoque.
+
+Essa experiência acrescentou uma nova dimensão ao meu perfil: **planejar é importante, mas saber viabilizar o plano é fundamental**.
+
+## Engenharia aplicada à operação
+
+Em **2019**, ingressei na **Martin Engineering**, em Campinas, como Analista de PCP Sênior.
+
+Foi uma etapa especialmente conectada à minha formação em **Engenharia de Controle e Automação**, concluída em 2013.
+
+Passei a acompanhar a cadeia de forma ampla: pedidos de venda, MRP, planos de compras e produção e S&OP. Também atuei no acompanhamento de importações de componentes e matérias-primas provenientes da matriz nos Estados Unidos, incluindo prazos e processos relacionados ao desembaraço aduaneiro.
+
+Minha formação técnica passou a dialogar diretamente com experiência prática acumulada em logística e planejamento. Processos, tecnologia, materiais, fornecedores, produção e mercado passaram a fazer parte de uma mesma análise.
+
+## Quando o PCP mudou de endereço
+
+Em **2020**, minha carreira tomou um novo rumo.
+
+Entrei na **Virtual Connection** e levei minha experiência em PCP para um ambiente completamente diferente: o Contact Center.
+
+Foi uma das experiências mais importantes da minha carreira porque precisei reaplicar conceitos que eu conhecia da indústria em uma operação baseada em pessoas, atendimento e capacidade de serviço.
+
+Passei a elaborar planos de atendimento, dimensionar células inbound e outbound, acompanhar fluxo de chamadas, produtividade e indicadores como tempo de espera, tempo médio de atendimento e taxa de abandono.
+
+Também trabalhei com previsão de demanda, análise de capacidade e identificação de gargalos.
+
+Foi nessa fase que os dados ganharam ainda mais protagonismo. Desenvolvi **dashboards em Power BI**, transformando informações operacionais em indicadores capazes de apoiar decisões e direcionar ações de melhoria.
+
+Ao mesmo tempo, assumi responsabilidades de liderança. Embora meu cargo permanecesse como Analista de PCP Sênior, passei a exercer atribuições próximas às de uma coordenação, conduzindo uma equipe de cinco profissionais e atuando simultaneamente em três projetos e diferentes bases operacionais.
+
+Aprendi muito sobre liderança, comunicação, conflitos e relacionamento com clientes.
+
+Depois de cinco anos, saí da Virtual Connection com uma certeza: **PCP não é uma profissão limitada à fábrica. É uma disciplina de gestão de capacidade, demanda, recursos e resultados.**
+
+## Melhoria contínua e gestão
+
+Minha formação acadêmica acompanhou essa evolução.
+
+Em **2015**, conquistei a certificação **Green Belt Lean Six Sigma pela Bacellar Treinamentos**. Aprendi a estruturar problemas pelo DMAIC, trabalhar com dados, identificar causas-raiz, mapear fluxos e buscar redução de desperdícios.
+
+Entre **2015 e 2016**, concluí o **MBA em Gestão de Projetos e Processos Organizacionais**, pela UniFAJ em parceria com o G7 Instituto. A formação aprofundou minha visão sobre projetos, processos, metodologias ágeis, Lean, custos, prazos, riscos e gestão de mudanças.
+
+Em **2023**, concluí o **MBA em Liderança, Gestão e Inovação pela UNINTER**. Foi uma etapa voltada principalmente à dimensão humana da gestão: liderança, inteligência emocional, feedback, conflitos, equipes de alta performance e inovação. Também aprofundei conceitos como Design Thinking e People Analytics, aproximando decisões sobre pessoas e processos de uma abordagem orientada por dados.
+
+Essas formações complementaram minha experiência prática. A Engenharia me ensinou a compreender sistemas. O Lean me ensinou a melhorar processos. A gestão de projetos me ensinou a estruturar mudanças. A liderança me ensinou a conduzir pessoas.
+
+## Um novo setor, os mesmos desafios
+
+Em **2025**, ingressei na **Hidrogood Horticultura Moderna**, no setor de agronegócio e tecnologias para horticultura.
+
+Mais uma vez, mudei de segmento sem abandonar aquilo que construí ao longo da carreira.
+
+Hoje atuo no planejamento e controle da produção, trabalhando com sequenciamento de máquinas, ordens de produção, análise e liberação de pedidos, estoques, MRP e expedição.
+
+Também participo do planejamento integrado entre diferentes unidades, da análise de capacidade e demanda, da construção de indicadores e da busca por redução de desperdícios e automação de processos.
+
+Minha atuação exige interface constante com Produção, Compras, Logística, Financeiro, Comercial e diretoria.
+
+Depois de passar por indústria, farmacêutica, alimentos, engenharia, tecnologia e agronegócio, percebo que os produtos mudam, os mercados mudam e as ferramentas evoluem. Mas os fundamentos permanecem: **entender a demanda, conhecer a capacidade, organizar recursos e transformar planejamento em resultado**.
+
+## A comunicação como parte da formação
+
+Minha trajetória acadêmica ganhou uma nova dimensão em **2026**, quando concluí a **Licenciatura em Letras pela UNIVESP**.
+
+Pode parecer uma mudança de direção para quem olha apenas para os títulos. Para mim, foi a continuação de um caminho que começou naquela redação de 2005.
+
+Ao longo da formação, aprofundei conhecimentos em linguística, semântica, análise do discurso e comunicação. Desenvolvi também competências de trabalho colaborativo, organização, pensamento crítico e produção de projetos.
+
+Passei a enxergar com ainda mais clareza algo que sempre esteve presente na minha carreira: não basta ter dados, processos e tecnologia. É preciso **interpretar informações e comunicar decisões de forma clara**.
+
+Essa formação amplia meu repertório para áreas como Customer Experience, comunicação interna, conteúdo estratégico e linguagem aplicada a soluções digitais e inteligência artificial.
+
+## O que conecta tudo isso
+
+Quando olho para minha trajetória, vejo menos uma sequência de cargos e mais uma construção.
+
+Comecei no Ensino Médio, em uma escola pública de Jaguariúna. Descobri a Logística. Entrei no chão de fábrica. Passei pelo almoxarifado. Cheguei ao PCP. Ampliei minha atuação para Supply Chain. Fui para compras e negociação. A Engenharia trouxe a visão sistêmica. O Lean estruturou minha abordagem de melhoria. Os MBAs ampliaram minha capacidade de trabalhar com projetos, processos, pessoas e inovação. O Contact Center me ensinou a aplicar PCP em serviços e aproximou minha carreira dos dados e da tecnologia. O agronegócio trouxe novos desafios industriais. E Letras acrescentou a comunicação a tudo aquilo que já havia construído.
+
+Minha carreira foi construída na interseção entre **processos, planejamento, tecnologia, dados, gestão e comunicação**.
+
+É assim que me reconheço profissionalmente: alguém que aprendeu a olhar para uma operação, entender suas conexões, identificar seus problemas e transformar informação em decisão.
+
+No fim, a pergunta que orienta minha trajetória continua sendo simples:
+
+**Como transformar aquilo que uma organização precisa fazer naquilo que ela é capaz de fazer — com eficiência, clareza e resultado?**` }
+    };
     const educationDetails = {
       letras: { title:'Licenciatura em Letras', company:'Universidade Virtual do Estado de São Paulo (UNIVESP)', meta:'2026', location:'Formação acadêmica', body:`Em 2026, concluí minha Licenciatura em Letras pela Universidade Virtual do Estado de São Paulo (UNIVESP), ampliando minha formação acadêmica para além da área de tecnologia e gestão na qual construí minha trajetória profissional.
 
@@ -846,9 +1038,19 @@ Essa evolução profissional esteve diretamente alinhada à minha formação com
 A passagem pela Iskra do Brasil representou o início da minha construção profissional, proporcionando uma base operacional sólida e o primeiro contato com processos de produção, logística, controle de materiais e gestão de estoques — competências que posteriormente seriam importantes para os próximos passos da minha carreira.` },
     };
     const experienceModal = document.getElementById('experienceModal');
+    function formatPresentationBody(body){
+      return body.split(/\n\s*\n/).map(block => {
+        const text = block.trim();
+        if (!text) return '';
+        if (text.startsWith('## ')) return `<h3>${escapeHtml(text.slice(3))}</h3>`;
+        return `<p>${escapeHtml(text).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')}</p>`;
+      }).join('');
+    }
+    function openPresentation(key){ const item=presentationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=formatPresentationBody(item.body); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function openExperience(key){ const item=experienceDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function openEducation(key){ const item=educationDetails[key]; if(!item) return; document.getElementById('modalTitle').textContent=item.title; document.getElementById('modalCompany').textContent=item.company; document.getElementById('modalMeta').textContent=item.meta; document.getElementById('modalLocation').textContent=item.location; document.getElementById('modalBody').innerHTML=item.body.split('\n\n').map(text=>`<p>${text}</p>`).join(''); experienceModal.classList.add('open'); experienceModal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
     function closeExperience(){ experienceModal.classList.remove('open'); experienceModal.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    document.querySelectorAll('[data-presentation]').forEach(button => button.addEventListener('click', () => openPresentation(button.dataset.presentation)));
     document.querySelectorAll('.see-more[data-experience]').forEach(button => button.addEventListener('click', () => openExperience(button.dataset.experience)));
     document.querySelectorAll('.academic-see-more[data-education]').forEach(button => button.addEventListener('click', () => openEducation(button.dataset.education)));
     document.querySelector('.modal-close').addEventListener('click', closeExperience);
